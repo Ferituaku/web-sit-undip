@@ -127,14 +127,14 @@ background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 10
 
 ">
                         <div class="card-body">
-                            <div id="calendar" style="width: 358px; height: 240px;">
+                            <div id="calendar" style="width: 345px; height: 240px;">
                                 <table class="table-condensed table-bordered table-striped" style="width: 100%; height: 100%;">
                                     <thead>
                                         <tr>
                                             <th colspan="7">
                                                 <span class="btn-group">
                                                     <a class="btn"><i class="icon-chevron-left"></i></a>
-                                                    <a class="btn active" style="padding:2px 90px 2px 90px;">February 2012</a>
+                                                    <a class="btn active" style="padding:2px 80px 2px 80px;">February 2012</a>
                                                     <a class="btn"><i class="icon-chevron-right"></i></a>
                                                 </span>
                                             </th>

@@ -21,7 +21,7 @@
             <!-- Navigation Menu -->
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-2">
-                    <a href="{{route('dashboard')}}" class="nav-link active d-flex align-items-center">
+                    <a href="{{route('dashboard')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
                         Dashboard
                     </a>
@@ -51,7 +51,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('herreg')}}" class="nav-link text-muted d-flex align-items-center">
+                    <a href="#" class="nav-link  active d-flex align-items-center">
                         <i class="bi bi-file-earmark-text me-2"></i>
                         Her-Registrasi
                     </a>
@@ -88,7 +88,7 @@
             </div>
         </header>
     </main>
-    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

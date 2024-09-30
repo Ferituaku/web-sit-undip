@@ -15,21 +15,33 @@ class UsersSeeder extends Seeder
     {
         $userData = [
             [
-                'name' => 'op',
-                'email' => 'op@operator.com',
-                'role' => 'operator',
+                'name' => 'Pak Jon',
+                'email' => 'akademik@akademik.com',
+                'role' => 'akademik',
                 'password' => bcrypt('123')
             ],
             [
-                'name' => 'Mulyono Widodo',
-                'email' => 'Mulyododo@students.com',
+                'name' => 'El Slamet Sentausa',
+                'email' => 'elslamet@students.com',
                 'role' => 'mahasiswa',
                 'password' => bcrypt('123')
             ],
             [
-                'name' => 'Susi Susiastuti',
+                'name' => 'Susi Susiastuti S.Kom, M.Kom',
                 'email' => 'susi@lecturer.com',
                 'role' => 'dosen',
+                'password' => bcrypt('123')
+            ],
+            [
+                'name' => 'Dr. Ahmed Dicks S.Kom, M. Si, P.Hd',
+                'email' => 'ahdick@lecturer.com',
+                'role' => 'dekan',
+                'password' => bcrypt('123')
+            ],
+            [
+                'name' => 'Budi Yono S.Kom, M.T',
+                'email' => 'budi@lecturer.com',
+                'role' => 'kaprodi',
                 'password' => bcrypt('123')
             ]
         ];
