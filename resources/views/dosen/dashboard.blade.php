@@ -111,32 +111,29 @@
                     <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
                         <div class="card-body text-center">
                             <h3 class="mb-4">Status IRS Mahasiswa</h3>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h5>Semester Akademik Sekarang</h5>
-                                    <p>2024/2025 Ganjil</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>Semester</h5>
-                                    <p>5</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>Status</h5>
-                                    <span class="badge bg-success">AKTIF</span>
-                                </div>
-                            </div>
+                            
+                                <table class="table table-hover">
+                                    ...
+                                </table>
+                            
                         </div>
                     </div>
                 </div>
 
-                <!-- GPA and Credits Card -->
+                <!-- Statistik -->
                 <div class="col-md-4">
-                    <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                        <div class="card-body text-center">
-                            <h4 class="mb-3">IPK</h4>
-                            <p class="h2 mb-4">3.9</p>
-                            <h4 class="mb-3">SKS</h4>
-                            <p class="h2">86</p>
+                    <div class="row-sm-2">
+                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+                            <div class="card-body text-center">
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+                            <div class="card-body text-center">
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+                            <div class="card-body text-center">
+                            </div>
                         </div>
                     </div>
                 </div>
