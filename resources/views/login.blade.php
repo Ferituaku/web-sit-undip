@@ -10,7 +10,6 @@
           <div class="card-body p-5 text-center">
             <!-- Logo Section -->
             <section class="vh-10 mb-4 " style="background-image: url('/img/Universitas-Diponegoro-Semarang-Logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; height: 60px;"></section>
-
             <div class="mb-md-5 mt-md-4 pb-2">
               <p class="h2 fw-bold mb-1 text-uppercase">Login SIT</p>
               <p class="h4 mb-4 fw-lighter">Sistem Informasi Terintegrasi</p>
