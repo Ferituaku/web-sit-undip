@@ -21,37 +21,37 @@
             <!-- Navigation Menu -->
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link active d-flex align-items-center">
+                    <a href="{{route('dashboard')}}" class="nav-link active d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
                         Dashboard
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('jadwal')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Jadwal
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('kulon')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-laptop me-2"></i>
                         Kuliah Online
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('akademisi')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-mortarboard me-2"></i>
-                        Akademik
+                        Akademisi
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('biaya')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-wallet2 me-2"></i>
                         Biaya Kuliah
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('herreg')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-file-earmark-text me-2"></i>
                         Her-Registrasi
                     </a>
@@ -67,7 +67,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-grow-1" style="margin-left: 255px;">
+    <main class="flex-grow-1" style="margin-left: 285px;">
         <!-- Header -->
         <header class="bg-white p-3 border-bottom fixed-top" style="margin-left: 263px;">
             <div class="d-flex justify-content-end align-items-center">
@@ -93,13 +93,15 @@
             <div class="row g-4">
                 <!-- User Info Card -->
                 <div class="col-md-8">
-                    <div class="card h-100" style="border-radius: 1rem; background: hsla(285, 100%, 91%, 1);
+                    <div class="card h-100" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -moz-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+
+
 ">
                         <div class="card-body">
                             <img src="{{ asset('img/pakvinsen.jpeg') }}" alt="avatar" class="rounded-circle img-fluid mb-3" style="width: 100px;">
@@ -114,13 +116,15 @@ background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 
 
                 <!-- Calendar Card -->
                 <div class="col-md-4">
-                    <div class="card h-100" style="border-radius: 1rem; background: hsla(285, 100%, 91%, 1);
+                    <div class="card h-100" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -moz-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+
+
 ">
                         <div class="card-body">
                             <div id="calendar" style="width: 358px; height: 240px;">
@@ -200,13 +204,15 @@ background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 
 
                 <!-- Academic Status Card -->
                 <div class="col-md-8">
-                    <div class="card" style="border-radius: 1rem; background: hsla(285, 100%, 91%, 1);
+                    <div class="card" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -moz-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+
+
 ">
                         <div class="card-body text-center">
                             <h2 class="mb-4">Status Akademik</h2>
@@ -230,13 +236,15 @@ background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 
 
                 <!-- GPA and Credits Card -->
                 <div class="col-md-4">
-                    <div class="card" style="border-radius: 1rem; background: hsla(285, 100%, 91%, 1);
+                    <div class="card" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -moz-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
 
-background: -webkit-linear-gradient(135deg, hsla(285, 100%, 91%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+
+
 ">
                         <div class="card-body text-center">
                             <h4 class="mb-3">IPK</h4>

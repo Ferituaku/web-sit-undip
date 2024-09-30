@@ -27,19 +27,19 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('verifikasi')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-file-earmark-check" style="margin-right: 8px;"></i>
                         Verifikasi IRS
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('jadwal')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Jadwal
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('konsultasi')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
                         Konsultasi Mahasiswa
                     </a>
@@ -55,7 +55,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-grow-1" style="margin-left: 255px;">
+    <main class="flex-grow-1" style="margin-left: 285px;">
         <!-- Header -->
         <header class="bg-white p-3 border-bottom fixed-top" style="margin-left: 263px;">
             <div class="d-flex justify-content-end align-items-center">

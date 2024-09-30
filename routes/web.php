@@ -19,11 +19,32 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+
+    // rute mahasiswa
+    Route::get('/mahasiswa/dashboard', [MahasiswaController::class, 'mahasiswa'])->name('dashboard')->middleware('role:mahasiswa');
+    Route::get('mahasiswa/biaya', [MahasiswaController::class, 'biaya'])->name('biaya')->middleware('role:mahasiswa');
+    Route::get('mahasiswa/jadwal', [MahasiswaController::class, 'jadwal'])->name('jadwal')->middleware('role:mahasiswa');
+    Route::get('mahasiswa/herreg', [MahasiswaController::class, 'herreg'])->name('herreg')->middleware('role:mahasiswa');
+    Route::get('mahasiswa/akademisi', [MahasiswaController::class, 'akademisi'])->name('akademisi')->middleware('role:mahasiswa');
+    Route::get('mahasiswa/kulon', [MahasiswaController::class, 'kulon'])->name('kulon')->middleware('role:mahasiswa');
+
+
+    // rute akademik
     Route::get('/akademik/dashboard', [AkademikController::class, 'akademik'])->middleware('role:akademik');
-    Route::get('/mahasiswa/dashboard', [MahasiswaController::class, 'mahasiswa'])->middleware('role:mahasiswa');
-    Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->middleware('role:dosen');
+
+    // rute dosen
+    Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->name('dashboard')->middleware('role:dosen');
+    Route::get('/dosen/verifikasi', [DosenController::class, 'verifikasi'])->name('verifikasi')->middleware('role:dosen');
+    Route::get('/dosen/lihatjadwal', [DosenController::class, 'lihatjadwal'])->name('lihatjadwal')->middleware('role:dosen');
+    Route::get('/dosen/konsultasi', [DosenController::class, 'konsultasi'])->name('konsultasi')->middleware('role:dosen');
+
+    // rute kaprodi
     Route::get('/kaprodi/pilihmenu', [KaprodiController::class, 'kaprodi'])->middleware('role:kaprodi');
+
+    // rute dekan
     Route::get('/dekan/pilihmenu', [DekanController::class, 'dekan'])->middleware('role:dekan');
+
+    // logout
     Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 });
 

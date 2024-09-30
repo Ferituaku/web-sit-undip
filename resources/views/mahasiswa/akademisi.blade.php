@@ -88,14 +88,3 @@
             </div>
         </header>
     </main>
-    </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize the calendar (you may want to use a library like FullCalendar)
-        // This is a placeholder for calendar initialization
-        console.log('Calendar should be initialized here');
-    });
-</script>
-@endauth
-@endsection
