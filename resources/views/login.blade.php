@@ -6,7 +6,7 @@
   <div class="container h-100 d-flex justify-content-center align-items-center">
     <div class="row justify-content-center align-items-center w-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card text-white" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(91, 84, 184, 0.5);">
+        <div class="card text-white" style="border:none; border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(67, 126, 255, 0.5);">
           <div class="card-body p-5 text-center">
             <!-- Logo Section -->
             <section class="vh-10 mb-4 " style="background-image: url('/img/Universitas-Diponegoro-Semarang-Logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; height: 60px;"></section>

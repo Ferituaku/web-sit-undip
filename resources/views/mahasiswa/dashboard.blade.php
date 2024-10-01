@@ -1,6 +1,6 @@
 @extends('layout')
-@section('title', 'Home Page')
-@section('content')
+@section('title', 'Dashboard Mahasiswa')
+@section('contentMhs')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
@@ -73,7 +73,7 @@
             <div class="d-flex justify-content-end align-items-center">
                 <div class="dropdown text-end flex flex-row items-center ms-auto justify-end gap-2">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="me-2">{{ auth()->user()->name }}</span>
+                        <span class="me-2 text-dark">{{ auth()->user()->name }}</span>
                         <img src="{{ asset('img/pakvinsen.jpeg') }}" alt="user" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
@@ -93,36 +93,37 @@
             <div class="row g-4">
                 <!-- User Info Card -->
                 <div class="col-md-8">
-                    <div class="card h-100" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
+                    <div class="card h-100" style="border:none; border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
-
-
-">
-                        <div class="card-body">
-                            <img src="{{ asset('img/pakvinsen.jpeg') }}" alt="avatar" class="rounded-circle img-fluid mb-3" style="width: 100px;">
-                            <h4>{{ auth()->user()->name }}</h4>
-                            <p class="text-muted mb-1">{{ auth()->user()->email }}</p>
-                            <p class="text-muted mb-1">NIM: 242345678000</p>
-                            <p class="text-muted mb-1">No. Telp: (098) 765-4321</p>
-                            <p class="text-muted mb-0">Alamat: Pandeglang, Banten</p>
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);">
+                        <div class=" row card-body">
+                            <div class="col-sm-4">
+                                <img src="{{ asset('img/pakvinsen.jpeg') }}" alt="avatar" class="rounded-circle img-fluid mb-3" style="width: 200px; margin:2rem">
+                            </div>
+                            <div class="col-sm-4" style="margin-left:4rem; margin-top: 3.5rem;">
+                                <h4>{{ auth()->user()->name }}</h4>
+                                <p class="text-light mb-1">{{ auth()->user()->email }}</p>
+                                <p class="text-light mb-1">NIM: 242345678000</p>
+                                <p class="text-light mb-1">No. Telp: (098) 765-4321</p>
+                                <p class="text-light mb-0">Alamat: Pandeglang, Banten</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Calendar Card -->
                 <div class="col-md-4">
-                    <div class="card h-100" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
+                    <div class="card h-100" style="border:none; border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
 
 ">
@@ -204,17 +205,17 @@ background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 10
 
                 <!-- Academic Status Card -->
                 <div class="col-md-8">
-                    <div class="card" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
+                    <div class="card" style="border:none;  border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
 
 ">
-                        <div class="card-body text-center">
+                        <div class="card-body text-center mb-2">
                             <h2 class="mb-4">Status Akademik</h2>
                             <div class="row">
                                 <div class="col-md-4">
@@ -236,20 +237,20 @@ background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 10
 
                 <!-- GPA and Credits Card -->
                 <div class="col-md-4">
-                    <div class="card" style="border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
+                    <div class="card" style="border:none; border-radius: 1rem; background: hsla(0, 0%, 100%, 1);
 
-background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -moz-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
-background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(245, 100%, 80%, 1) 100%);
+background: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 1) 0%, hsla(209, 100%, 89%, 1) 14%, hsla(217, 100%, 66%, 1) 49%);
 
 
 ">
                         <div class="card-body text-center">
-                            <h4 class="mb-3">IPK</h4>
-                            <p class="h2 mb-4">3.9</p>
-                            <h4 class="mb-3">SKS</h4>
+                            <h4 class="mb-1">IPK</h4>
+                            <p class="h2 mb-2">3.9</p>
+                            <h4 class="mb-1">SKS</h4>
                             <p class="h2">86</p>
                         </div>
                     </div>

@@ -9,6 +9,15 @@ class DekanController extends Controller
 {
     public function dekan()
     {
-        return view('dekan/pilihmenu');
+        return view('dekan/dashboard');
+    }
+
+    public function pilihmenu()
+    {
+        return view('/pilihmenu');
+    }
+    public function dosen()
+    {
+        return view('dosen/dashboard');
     }
 }

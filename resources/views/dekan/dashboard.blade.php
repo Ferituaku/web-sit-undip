@@ -1,14 +1,12 @@
 @extends('layout')
-@section('title', 'Jadwal Dosen')
-@section('contentDsn')
+@section('title', 'Dashboard Dekan')
+@section('contentDekan')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 @auth
 <div class="d-flex">
     <!-- Sidebar -->
@@ -23,25 +21,25 @@
                 <li class="nav-item mb-2">
                     <a href="#" class="nav-link active d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
-                        Dashboard
+                        Dashboard Dekan
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('verifikasi')}}" class="nav-link text-muted d-flex align-items-center">
-                        <i class="bi bi-file-earmark-check" style="margin-right: 8px;"></i>
-                        Verifikasi IRS
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                        <i class="bi bi-file-earmark-text me-2"></i>
+                        Laporan Akademik
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('jadwal')}}" class="nav-link text-muted d-flex align-items-center">
-                        <i class="bi bi-calendar me-2"></i>
-                        Jadwal
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                        <i class="bi bi-people me-2"></i>
+                        Data Fakultas
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('konsultasi')}}" class="nav-link text-muted d-flex align-items-center">
-                        <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
-                        Konsultasi Mahasiswa
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                        <i class="bi bi-graph-up me-2"></i>
+                        Statistik Akademik
                     </a>
                 </li>
             </ul>
@@ -62,7 +60,7 @@
                 <div class="dropdown text-end flex flex-row items-center ms-auto justify-end gap-2">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="text-dark me-2">{{ auth()->user()->name }}</span>
-                        <img src="{{ asset('img/budosen.jpg') }}" alt="user" width="32" height="32" class="rounded-circle">
+                        <img src="{{ asset('img/budekan.jpg') }}" alt="user" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
                         <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -80,67 +78,110 @@
         <div class="container-fluid py-4" style="margin-top: 60px; margin-left:10px">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard Dekan</li>
                 </ol>
             </nav>
-            {{--<div class="row g-4">
+            <div class="row g-4">
                 <!-- User Info Card -->
                 <div class="col-md-12">
                     <div class="card h-100" style="border-radius: 1rem;  background: hsla(199, 97%, 66%, 1);
-                        background: linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        background: -moz-linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        background: -webkit-linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        ">
+                        background: linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);">
                         <div class="card-body d-flex flex-column flex-md-row align-items-center">
                             <div class="mb-3 mb-md-0 me-md-3">
-                                <img src="{{ asset('img/budosen.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <img src="{{ asset('img/budekan.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                             </div>
                             <div class="text-center text-md-start">
-                                <h4 class="text-white">{{ auth()->user()->name }}</h4>
+                                <h4 class="text-white">Dekan {{ auth()->user()->name }}</h4>
                                 <p class="text-white mb-1">{{ auth()->user()->email }}</p>
                                 <p class="text-white mb-1">NIP: 139945678000</p>
                                 <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
-                                <p class="text-white mb-0">Alamat: Pati, Sukolilo</p>
+                                <p class="text-white mb-0">Alamat: Semarang, Jawa Tengah</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- IRS Status Information Card -->
+                <!-- Fakultas Overview Card -->
                 <div class="col-md-8">
                     <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                        <div class="card-body text-center">
-                            <h3 class="mb-4">Status IRS Mahasiswa</h3>
-
-                            <table class="table table-hover">
-                                ...
-                            </table>
-
+                        <div class="card-body">
+                            <h3 class="mb-4 text-center">Ringkasan Fakultas</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card bg-primary text-white">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Jumlah Prodi</h5>
+                                            <p class="card-text display-4">5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card bg-success text-white">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Total Mahasiswa</h5>
+                                            <p class="card-text display-4">1250</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card bg-info text-white">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Total Dosen</h5>
+                                            <p class="card-text display-4">75</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Statistik -->
                 <div class="col-md-4">
-                    <div class="row-sm-2">
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
+                    <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+                        <div class="card-body">
+                            <h3 class="mb-4 text-center">Statistik Akademik</h3>
+                            <canvas id="akademikChart"></canvas>
                         </div>
                     </div>
                 </div>
-            </div>--}}
+            </div>
         </div>
     </main>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('akademikChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['IPK Rata-rata', 'Kelulusan', 'Penelitian'],
+            datasets: [{
+                label: 'Nilai',
+                data: [3.5, 85, 65],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 
 @endauth
 @endsection

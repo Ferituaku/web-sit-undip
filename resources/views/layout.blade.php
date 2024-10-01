@@ -15,7 +15,17 @@
       @auth
       <!-- Content(dashboard dll) hanya muncul saat user login -->
       <div class="w-5 px-4 py-10 pt-6">
-        @yield('content')
+        @if (Auth::user()->role == 'mahasiswa')
+        @yield('contentMhs')
+        @elseif (Auth::user()->role == 'dosen')
+        @yield('contentDsn')
+        @elseif (Auth::user()->role == 'akademik')
+        @yield('contentAkd')
+        @elseif (Auth::user()->role == 'dekan')
+        @yield('contentpilih')
+        @elseif (Auth::user()->role == 'kaprodi')
+        @yield('contentpilih')
+        @endif
       </div>
       @else
       <!-- Main Content untuk user yang tidak login -->

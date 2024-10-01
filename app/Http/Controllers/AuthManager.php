@@ -18,13 +18,13 @@ class AuthManager extends Controller
         return view('login');
     }
 
-    function register()
-    {
-        if (Auth::check()) {
-            return redirect(route('dashboard'));
-        }
-        return view('register');
-    }
+    // function register()
+    // {
+    //     if (Auth::check()) {
+    //         return redirect(route('dashboard'));
+    //     }
+    //     return view('register');
+    // }
 
 
 
@@ -52,9 +52,8 @@ class AuthManager extends Controller
                 case 'akademik':
                     return redirect()->intended('/akademik/dashboard');
                 case 'dekan':
-                    return redirect()->intended('/dekan/pilihmenu');
                 case 'kaprodi':
-                    return redirect()->intended('/kaprodi/pilihmenu');
+                    return redirect()->intended('/pilihmenu');
                 default:
                     return redirect('/login')->with('error', 'Role tidak dikenali');
             }

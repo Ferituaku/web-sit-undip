@@ -8,11 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class RoleMiddleware
 {
-    public function handle(Request $request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (auth::user()->role == $role) {
-            return $next($request);
+        if (!Auth::check()) {
+            return redirect('login');
         }
+
+        $user = Auth::user();
+
+        foreach ($roles as $role) {
+            if ($user->role == $role) {
+                return $next($request);
+            }
+        }
+
         return redirect('/')->with('error', 'You do not have access to this page');
     }
 }

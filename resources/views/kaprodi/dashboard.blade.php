@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Jadwal Dosen')
+@section('title', 'Dashboard Dosen')
 @section('contentDsn')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
@@ -83,7 +83,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
             </nav>
-            {{--<div class="row g-4">
+            <div class="row g-4">
                 <!-- User Info Card -->
                 <div class="col-md-12">
                     <div class="card h-100" style="border-radius: 1rem;  background: hsla(199, 97%, 66%, 1);
@@ -96,7 +96,7 @@
                                 <img src="{{ asset('img/budosen.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                             </div>
                             <div class="text-center text-md-start">
-                                <h4 class="text-white">{{ auth()->user()->name }}</h4>
+                                <h4 class="text-white">Kaprodi {{ auth()->user()->name }}</h4>
                                 <p class="text-white mb-1">{{ auth()->user()->email }}</p>
                                 <p class="text-white mb-1">NIP: 139945678000</p>
                                 <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-            </div>--}}
+            </div>
         </div>
     </main>
 </div>
