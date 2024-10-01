@@ -22,9 +22,9 @@
         @elseif (Auth::user()->role == 'akademik')
         @yield('contentAkd')
         @elseif (Auth::user()->role == 'dekan')
-        @yield('contentpilih')
+        @yield('contentDkn')
         @elseif (Auth::user()->role == 'kaprodi')
-        @yield('contentpilih')
+        @yield('contentKpd')
         @endif
       </div>
       @else

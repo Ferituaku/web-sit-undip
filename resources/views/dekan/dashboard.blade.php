@@ -1,16 +1,19 @@
 @extends('layout')
 @section('title', 'Dashboard Dekan')
-@section('contentDekan')
+@section('contentDkn')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 @auth
 <div class="d-flex">
     <!-- Sidebar -->
-    <aside class="sidebar bg-light vh-100 position-fixed shadow p-2 mb-5 bg-body-tertiary rounded" style="width: 250px;">
+    <aside class="sidebar fixed-top bg-light vh-100 position-fixed shadow p-2 mb-5 bg-body-tertiary rounded" style="width: 250px;">
         <div class="d-flex flex-column p-3 h-100">
             <a href="#" class="navbar-brand d-flex align-items-center mb-4">
                 <img src="{{ asset('img/Universitas-Diponegoro-Semarang-Logo.png') }}" alt="logo" class="img-fluid" style="height: 50px; width: 50px;">
@@ -53,14 +56,14 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-grow-1" style="margin-left: 285px;">
+    <main class="flex-grow-1" style="margin-left: 250px;">
         <!-- Header -->
         <header class="bg-white p-3 border-bottom fixed-top" style="margin-left: 263px;">
             <div class="d-flex justify-content-end align-items-center">
                 <div class="dropdown text-end flex flex-row items-center ms-auto justify-end gap-2">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="text-dark me-2">{{ auth()->user()->name }}</span>
-                        <img src="{{ asset('img/budekan.jpg') }}" alt="user" width="32" height="32" class="rounded-circle">
+                        <img src="{{ asset('img/PakAhmed.jpg') }}" alt="user" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
                         <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -88,10 +91,10 @@
                         background: linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);">
                         <div class="card-body d-flex flex-column flex-md-row align-items-center">
                             <div class="mb-3 mb-md-0 me-md-3">
-                                <img src="{{ asset('img/budekan.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <img src="{{ asset('img/PakAhmed.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                             </div>
                             <div class="text-center text-md-start">
-                                <h4 class="text-white">Dekan {{ auth()->user()->name }}</h4>
+                                <h4 class="text-white">{{ auth()->user()->name }}</h4>
                                 <p class="text-white mb-1">{{ auth()->user()->email }}</p>
                                 <p class="text-white mb-1">NIP: 139945678000</p>
                                 <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
