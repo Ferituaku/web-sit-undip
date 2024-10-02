@@ -4,31 +4,41 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css" rel="stylesheet" />
 
 
 @auth
-<div class="bg-white container-sm col-6 border my-3 rounded px-5 py-3 pb-5">
-    <h1>Halo!!</h1>
-    <div>Anda ingin Masuk Sebagai:</div>
-    <div class="card mt-3">
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item mb-2">
-                @if(Auth::user()->role == 'dekan' || Auth::user()->role == 'kaprodi')
-                <a href="{{route('dashboard')}}" class="nav-link d-flex align-items-center">Menu Doswal</a>
-            </li>
-            <li class="nav-item mb-2">
-                @elseif(Auth::user()->role == 'dekan')
-                <a href="{{ route('dekan/dashboard') }}" class="nav-link d-flex align-items-center">Menu Dekan</a>
-                @elseif(Auth::user()->role == 'kaprodi')
-                <a href="{{ route('kaprodi/dashboard') }}" class="nav-link d-flex align-items-center">Menu Kaprodi</a>
-                @endif
-            </li>
-        </ul>
+<section class="vh-100 background w-full" style="background-image: url('/img/back-ground-log-sign.jpg'); background-size: cover; background-position: center;">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center w-100">
+            <div class="card text-white col-12 col-md-8 col-lg-6" style="border:none; border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(67, 126, 255, 0.5);">
+                <div class="card-body text-center">
+                    <h1>Selamat Datang!</h1>
+                    <div>Anda ingin Masuk Sebagai:</div>
+                    <div class="d-grid gap-2 d-md-block mt-4">
+                        <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
+                            <a href="{{route('dosen.dashboard')}}" class="nav-link d-flex align-items-center text-light">Menu Dosen</a>
+                        </button>
+                        <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
+                            @if(Auth::user()->role == 'dekan')
+                            <a href="{{ route('dekan.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Dekan</a>
+                            @elseif(Auth::user()->role == 'kaprodi')
+                            <a href="{{ route('kaprodi.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Kaprodi</a>
+                            @endif
+                        </button>
+                    </div>
+                </div>
+                <div class="align-items-center mt-4">
+                    <a href="/logout" class="btn btn-sm btn-danger align-items-center mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div><a href="/logout" class="btn btn-sm btn-secondary">Logout >></a></div>
-
-</div>
+</section>
 @endauth
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js"></script>

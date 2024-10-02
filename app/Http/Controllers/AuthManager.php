@@ -52,6 +52,7 @@ class AuthManager extends Controller
                 case 'akademik':
                     return redirect()->intended('/akademik/dashboard');
                 case 'dekan':
+                    return redirect()->intended('/pilihmenu');
                 case 'kaprodi':
                     return redirect()->intended('/pilihmenu');
                 default:

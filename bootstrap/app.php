@@ -16,7 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias(['role' => RoleMiddleware::class]);
 
         // Add middleware
-        $middleware->priority([Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,]);
+        $middleware->priority([
+            Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+            RoleMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
