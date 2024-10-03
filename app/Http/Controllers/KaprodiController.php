@@ -15,7 +15,7 @@ class KaprodiController extends Controller
     {
         return view('/pilihmenu');
     }
-    public function dosen()
+    public function dosenalter()
     {
         return view('dosen/dashboard');
     }

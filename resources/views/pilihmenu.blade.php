@@ -16,16 +16,21 @@
                     <h1>Selamat Datang!</h1>
                     <div>Anda ingin Masuk Sebagai:</div>
                     <div class="d-grid gap-2 d-md-block mt-4">
+                        @if(Auth::user()->role == 'dekan')
                         <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
-                            <a href="{{route('dosen.dashboard')}}" class="nav-link d-flex align-items-center text-light">Menu Dosen</a>
+                            <a href="{{ route('dosen.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Dosen</a>
                         </button>
                         <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
-                            @if(Auth::user()->role == 'dekan')
                             <a href="{{ route('dekan.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Dekan</a>
-                            @elseif(Auth::user()->role == 'kaprodi')
-                            <a href="{{ route('kaprodi.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Kaprodi</a>
-                            @endif
                         </button>
+                        @elseif(Auth::user()->role == 'kaprodi')
+                        <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
+                            <a href="{{ route('dosen.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Dosen</a>
+                        </button>
+                        <button class="btn btn-outline-light btn-rounded" data-mdb-ripple-init data-mdb-ripple-color="dark" type="button">
+                            <a href="{{ route('kaprodi.dashboard') }}" class="nav-link d-flex align-items-center text-light">Menu Kaprodi</a>
+                        </button>
+                        @endif
                     </div>
                 </div>
                 <div class="align-items-center mt-4">

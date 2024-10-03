@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title', 'Login')
-@section('acontent')
+@section('login')
 
 <section class="vh-100 background w-full" style="background-image: url('/img/back-ground-log-sign.jpg'); background-size: cover; background-position: center;">
   <div class="container h-100 d-flex justify-content-center align-items-center">

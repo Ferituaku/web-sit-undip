@@ -15,21 +15,30 @@
       @auth
       <!-- Content(dashboard dll) hanya muncul saat user login -->
       <div class="w-5 px-4 py-10 pt-6">
-        @if (Auth::user()->role == 'mahasiswa')
+        @switch(Auth::user()->role)
+        @case('mahasiswa')
         @yield('contentMhs')
-        @elseif (Auth::user()->role == 'dosen')
+        @break
+        @case('dosen')
         @yield('contentDsn')
-        @elseif (Auth::user()->role == 'akademik')
+        @break
+        @case('akademik')
         @yield('contentAkd')
-        @elseif (Auth::user()->role == 'dekan')
-        @yield('contentDsn') || @yield('contentDkn')
-        @elseif (Auth::user()->role == 'kaprodi')
-        @yield('contentKpd') || @yield('contentDkn')
-        @endif
+        @break
+        @case('dekan')
+        @yield('contentDkn')
+        @yield('contentDsn')
+        @break
+        @case('kaprodi')
+        @yield('contentKpd')
+        @yield('contentDsn')
+        @break
+        @default
       </div>
+      @endswitch
       @else
       <!-- Main Content untuk user yang tidak login -->
-      @yield('acontent')
+      @yield('login')
       @endauth
     </div>
   </div>

@@ -21,8 +21,8 @@ class UsersSeeder extends Seeder
                 'password' => bcrypt('123')
             ],
             [
-                'name' => 'El Slamet Sentausa',
-                'email' => 'elslamet@students.com',
+                'name' => 'El Vinsen',
+                'email' => 'elvinsen@students.com',
                 'role' => 'mahasiswa',
                 'password' => bcrypt('123')
             ],
