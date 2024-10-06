@@ -81,13 +81,11 @@
             <!-- Navigation Menu -->
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link active d-flex align-items-center">
+                    <a href="#" class="nav-link d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
                         dashboard
                     </a>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="{{route('kaprodi.buatjadwal')}}" class="nav-link d-flex align-items-center">
+                    <a href="#" class="nav-link active d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Buat Jadwal Kuliah
                     </a>
@@ -140,7 +138,7 @@
         <div class="container-fluid py-4" style="margin-top: 10px; margin-left:10px">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard Kaprodi</li>
+                    <li class="breadcrumb-item active" aria-current="page">Buat Jadwal</li>
                 </ol>
             </nav>
             <div class="row g-4">
@@ -162,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 
                 <div class="col-md-3">
                     <div class="card text-white bg-primary">
                         <div class="card-body">
@@ -230,26 +228,26 @@
                                             <td><span class="badge bg-success">Aktif</span></td>
                                         </tr>
                                         <!-- Add more rows as needed -->
-                                    </tbody>
-                                </table>
-                                <button type="button" class="btn btn-secondary" style="margin-left: 300px;">Lihat lebih banyak</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Academic Performance Chart -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title mb-4">Performa Akademik Informatika</h5>
-                            <canvas id="academicPerformanceChart"></canvas>
-                        </div>
-                    </div>
-                </div>
+                </tbody>
+                </table>
+                <button type="button" class="btn btn-secondary" style="margin-left: 300px;">Lihat lebih banyak</button>
             </div>
         </div>
-    </main>
+</div>
+</div> -->
+
+<!-- Academic Performance Chart -->
+<div class="col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title mb-4">Performa Akademik Informatika</h5>
+            <canvas id="academicPerformanceChart"></canvas>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</main>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

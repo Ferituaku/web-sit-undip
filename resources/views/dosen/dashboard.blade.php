@@ -28,19 +28,19 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('verifikasi')}}" class="nav-link text-muted d-flex align-items-center">
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-file-earmark-check" style="margin-right: 8px;"></i>
                         Verifikasi IRS
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('jadwal')}}" class="nav-link text-muted d-flex align-items-center">
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Jadwal
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('konsultasi')}}" class="nav-link text-muted d-flex align-items-center">
+                    <a href="#" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
                         Konsultasi Mahasiswa
                     </a>

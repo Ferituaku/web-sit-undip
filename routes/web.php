@@ -38,28 +38,32 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/akademik/dashboard', [AkademikController::class, 'akademik'])->name('dashboard');
     });
 
-    // Rute untuk dosen, kaprodi, dan dekan
-    Route::group(['middleware' => ['role:dosen']], function () {
-        Route::get('/dosen/dashboard', [DekanController::class, 'dosenalter'])->name('dosen.dashboard');
-        Route::get('/dosen/verifikasi', [DosenController::class, 'verifikasi'])->name('verifikasi');
-        Route::get('/dosen/lihatjadwal', [DosenController::class, 'lihatjadwal'])->name('lihatjadwal');
-        Route::get('/dosen/konsultasi', [DosenController::class, 'konsultasi'])->name('konsultasi');
+    // Rute untuk dosen
+
+    Route::group(['middleware' => 'role:dosen,kaprodi,dekan'], function () {
+        Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->name('dashboard');
+        Route::get('/dosen/verifikasi', [DosenController::class, 'verifikasi'])->name('dosen.verifikasi');
+        Route::get('/dosen/lihatjadwal', [DosenController::class, 'lihatjadwal'])->name('dosen.lihatjadwal');
+        Route::get('/dosen/konsultasi', [DosenController::class, 'konsultasi'])->name('dosen.konsultasi');
     });
 
     // Rute untuk kaprodi
-    Route::group(['middleware' => 'role:kaprodi'], function () {
+    Route::group(['middleware' => 'role:kaprodi,dosen'], function () {
         Route::get('/kaprodi/dashboard', [KaprodiController::class, 'kaprodi'])->name('kaprodi.dashboard');
-        Route::get('/dosen/dashboard', [DekanController::class, 'dosenalter'])->name('dashboard');
+        Route::get('/kaprodi/buatjadwal', [KaprodiController::class, 'kaprodi'])->name('kaprodi.buatjadwal');
+        Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->name('dosen.dashboard');
     });
 
     // Rute untuk dekan
-    Route::group(['middleware' => 'role:dekan'], function () {
+    Route::group(['middleware' => 'role:dekan,dosen'], function () {
         Route::get('/dekan/dashboard', [DekanController::class, 'dekan'])->name('dekan.dashboard');
         Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->name('dosen.dashboard');
     });
 
     // Rute untuk pemilihan menu oleh dekan dan kaprodi
-    Route::get('/pilihmenu', [PilihMenu::class, 'pilihmenu'])->name('pilihmenu')->middleware('role:dekan,kaprodi');
+    Route::group(['middleware' => 'role:dekan,kaprodi'], function () {
+        Route::get('/pilihmenu', [PilihMenu::class, 'pilihmenu'])->name('pilihmenu');
+    });
 
     // Logout
     Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
