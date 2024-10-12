@@ -81,7 +81,7 @@
             <!-- Navigation Menu -->
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link d-flex align-items-center">
+                    <a href="{{route('kaprodi.dashboard')}}" class="nav-link d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
                         dashboard
                     </a>

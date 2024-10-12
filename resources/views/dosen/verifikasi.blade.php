@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Verifikasi IRS')
+@section('title', 'Dashboard Dosen')
 @section('contentDsn')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
@@ -94,52 +94,52 @@
                         <div class="card-body d-flex flex-column flex-md-row align-items-center">
                             <div class="mb-3 mb-md-0 me-md-3">
                                 <img src="{{ asset('img/budosen.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                            </div>
-                            <div class="text-center text-md-start">
-                                <h4 class="text-white">{{ auth()->user()->name }}</h4>
-                                <p class="text-white mb-1">{{ auth()->user()->email }}</p>
-                                <p class="text-white mb-1">NIP: 139945678000</p>
-                                <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
-                                <p class="text-white mb-0">Alamat: Pati, Sukolilo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IRS Status Information Card -->
-                <div class="col-md-8">
-                    <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                        <div class="card-body text-center">
-                            <h3 class="mb-4">Status IRS Mahasiswa</h3>
-
-                            <table class="table table-hover">
-                                ...
-                            </table>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Statistik -->
-                <div class="col-md-4">
-                    <div class="row-sm-2">
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>--}}
         </div>
-    </main>
+        <div class="text-center text-md-start">
+            <h4 class="text-white">{{ auth()->user()->name }}</h4>
+            <p class="text-white mb-1">{{ auth()->user()->email }}</p>
+            <p class="text-white mb-1">NIP: 139945678000</p>
+            <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
+            <p class="text-white mb-0">Alamat: Pati, Sukolilo</p>
+        </div>
+</div>
+</div>
+</div>
+
+<!-- IRS Status Information Card -->
+<div class="col-md-8">
+    <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+        <div class="card-body text-center">
+            <h3 class="mb-4">Status IRS Mahasiswa</h3>
+
+            <table class="table table-hover">
+                ...
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- Statistik -->
+<div class="col-md-4">
+    <div class="row-sm-2">
+        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+            <div class="card-body text-center">
+            </div>
+        </div>
+        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+            <div class="card-body text-center">
+            </div>
+        </div>
+        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
+            <div class="card-body text-center">
+            </div>
+        </div>
+    </div>
+</div>
+</div>--}}
+</div>
+</main>
 </div>
 
 @endauth

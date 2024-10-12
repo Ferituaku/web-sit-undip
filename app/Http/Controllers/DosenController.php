@@ -12,14 +12,14 @@ class DosenController extends Controller
     }
     public function verifikasi()
     {
-        return view('dosen/verifikasi');
+        return view('/dosen/verifikasi');
     }
     public function lihatjadwal()
     {
-        return view('dosen/lihatjadwal');
+        return view('/dosen/lihatjadwal');
     }
     public function konsultasi()
     {
-        return view('dosen/konsultasi');
+        return view('/dosen/konsultasi');
     }
 }

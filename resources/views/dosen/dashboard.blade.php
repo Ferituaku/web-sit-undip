@@ -28,19 +28,19 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('dosen.verifikasi')}}" class="nav-link text-muted d-flex align-items-center" id="linkDoswalVerifikasi">
                         <i class="bi bi-file-earmark-check" style="margin-right: 8px;"></i>
                         Verifikasi IRS
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('dosen.lihatjadwal')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Jadwal
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('dosen.verifikasi')}}" class="nav-link text-muted d-flex align-items-center">
                         <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
                         Konsultasi Mahasiswa
                     </a>
@@ -142,6 +142,19 @@
         </div>
     </main>
 </div>
+<script>
+    $(document).ready(function() {
+        $('#linkDoswalVerifikasi').on('click', function(e) {
+            e.preventDefault();
+            let url = $(this).attr('href');
+
+            $.get(url, function(data) {
+                $('#contentArea').html(data);
+            });
+        });
+    });
+</script>
+
 
 @endauth
 @endsection
