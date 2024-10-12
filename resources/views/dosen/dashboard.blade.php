@@ -4,20 +4,48 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+    .sidebar {
+        background: linear-gradient(180deg, #3a0ca3 0%, #4361ee 100%);
+    }
+
+    .sidebar .nav-link {
+        color: #ffffff;
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-card {
+        transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
 @auth
 <div class="d-flex">
     <!-- Sidebar -->
-    <aside class="sidebar bg-light vh-100 position-fixed shadow p-2 mb-5 bg-body-tertiary rounded" style="width: 250px;">
+    <aside class="fixed-top sidebar vh-100 position-fixed" style="width: 250px;">
         <div class="d-flex flex-column p-3 h-100">
-            <a href="#" class="navbar-brand d-flex align-items-center mb-4">
+            <a href="#" class="navbar-brand d-flex align-items-center mb-4 text-white">
                 <img src="{{ asset('img/Universitas-Diponegoro-Semarang-Logo.png') }}" alt="logo" class="img-fluid" style="height: 50px; width: 50px;">
-                <span class="fs-5 fw-bold ms-2 text-dark">SIT Undip</span>
+                <span class="fs-5 fw-bold ms-2">SIT Undip</span>
             </a>
             <!-- Navigation Menu -->
             <ul class="nav nav-pills flex-column mb-auto">
@@ -28,27 +56,39 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('dosen.verifikasi')}}" class="nav-link text-muted d-flex align-items-center" id="linkDoswalVerifikasi">
-                        <i class="bi bi-file-earmark-check" style="margin-right: 8px;"></i>
+                    <a href="{{route('dosen.verifikasi')}}" class="nav-link d-flex align-items-center" id="linkDoswalVerifikasi">
+                        <i class="bi bi-file-earmark-check me-2"></i>
                         Verifikasi IRS
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('dosen.lihatjadwal')}}" class="nav-link text-muted d-flex align-items-center">
+                    <a href="{{route('dosen.lihatjadwal')}}" class="nav-link d-flex align-items-center">
                         <i class="bi bi-calendar me-2"></i>
                         Jadwal
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="{{route('dosen.verifikasi')}}" class="nav-link text-muted d-flex align-items-center">
-                        <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-chat-dots me-2"></i>
                         Konsultasi Mahasiswa
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-journal-text me-2"></i>
+                        Manajemen Nilai
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-book me-2"></i>
+                        Materi Kuliah
                     </a>
                 </li>
             </ul>
             <!-- Logout -->
             <div class="mt-auto">
-                <a href="{{ route('logout') }}" class="nav-link text-danger d-flex align-items-center">
+                <a href="{{ route('logout') }}" class="nav-link text-white-50 d-flex align-items-center">
                     <i class="bi bi-box-arrow-right me-2"></i> Log Out
                 </a>
             </div>
@@ -56,18 +96,19 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-grow-1" style="margin-left: 285px;">
+    <main class="flex-grow-1" style="margin-left: 250px;">
         <!-- Header -->
-        <header class="bg-white p-3 border-bottom fixed-top" style="margin-left: 263px;">
-            <div class="d-flex justify-content-end align-items-center">
-                <div class="dropdown text-end flex flex-row items-center ms-auto justify-end gap-2">
+        <header class="bg-white p-3 border-bottom shadow-sm fixed-top" style="margin-left: 250px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 style="visibility:hidden;">Dashboard Dosen</h3>
+                <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="text-dark me-2">{{ auth()->user()->name }}</span>
-                        <img src="{{ asset('img/budosen.jpg') }}" alt="user" width="32" height="32" class="rounded-circle">
+                        <img src="{{ asset('img/budosen.jpg') }}" alt="user" width="32" height="32" class="rounded-circle me-2">
+                        <span class="text-dark">{{ auth()->user()->name }}</span>
                     </a>
-                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Pengaturan</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -78,63 +119,88 @@
         </header>
 
         <!-- Page Content -->
-        <div class="container-fluid py-4" style="margin-top: 60px; margin-left:10px">
+        <div class="container-fluid py-4" style="margin-top: 70px;">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard Dosen</li>
                 </ol>
             </nav>
             <div class="row g-4">
                 <!-- User Info Card -->
-                <div class="col-md-12">
-                    <div class="card h-100" style="border-radius: 1rem;  background: hsla(199, 97%, 66%, 1);
-                        background: linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        background: -moz-linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        background: -webkit-linear-gradient(180deg, hsla(199, 97%, 66%, 1) 0%, hsla(254, 62%, 49%, 1) 100%);
-                        ">
-                        <div class="card-body d-flex flex-column flex-md-row align-items-center">
-                            <div class="mb-3 mb-md-0 me-md-3">
-                                <img src="{{ asset('img/budosen.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0" style="background: linear-gradient(45deg, #4158D0, #C850C0);">
+                        <div class="card-body text-white">
+                            <div class="text-center mb-3">
+                                <img src="{{ asset('img/budosen.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 100px;">
                             </div>
-                            <div class="text-center text-md-start">
-                                <h4 class="text-white">{{ auth()->user()->name }}</h4>
-                                <p class="text-white mb-1">{{ auth()->user()->email }}</p>
-                                <p class="text-white mb-1">NIP: 139945678000</p>
-                                <p class="text-white mb-1">No. Telp: (021) 765-43533</p>
-                                <p class="text-white mb-0">Alamat: Pati, Sukolilo</p>
+                            <h4 class="text-center">{{ auth()->user()->name }}</h4>
+                            <p class="mb-1"><i class="bi bi-envelope me-2"></i>{{ auth()->user()->email }}</p>
+                            <p class="mb-1"><i class="bi bi-person-badge me-2"></i>NIP: 139945678000</p>
+                            <p class="mb-1"><i class="bi bi-telephone me-2"></i>(021) 765-43533</p>
+                            <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Pati, Sukolilo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="col-md-8">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card stat-card border-0 bg-primary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mahasiswa Bimbingan</h5>
+                                    <p class="card-text display-4">42</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card border-0 bg-success text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kelas Aktif</h5>
+                                    <p class="card-text display-4">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card border-0 bg-info text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Penelitian Aktif</h5>
+                                    <p class="card-text display-4">3</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- IRS Status Information Card -->
-                <div class="col-md-8">
-                    <div class="card" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                        <div class="card-body text-center">
-                            <h3 class="mb-4">Status IRS Mahasiswa</h3>
-
-                            <table class="table table-hover">
-                                ...
-                            </table>
-
+                <div class="col-md-6">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Status IRS Mahasiswa</h5>
+                            <canvas id="irsChart"></canvas>
                         </div>
                     </div>
                 </div>
 
-                <!-- Statistik -->
-                <div class="col-md-4">
-                    <div class="row-sm-2">
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-color:blue; border-radius:1rem; background: rgba(100, 100, 100, 0);">
-                            <div class="card-body text-center">
-                            </div>
+                <!-- Upcoming Schedule -->
+                <div class="col-md-6">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Jadwal Mendatang</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Algoritma dan Pemrograman
+                                    <span class="badge bg-primary rounded-pill">09:00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Basis Data
+                                    <span class="badge bg-primary rounded-pill">13:00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Jaringan Komputer
+                                    <span class="badge bg-primary rounded-pill">15:30</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -142,6 +208,8 @@
         </div>
     </main>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     $(document).ready(function() {
         $('#linkDoswalVerifikasi').on('click', function(e) {
@@ -152,9 +220,37 @@
                 $('#contentArea').html(data);
             });
         });
+
+        // Chart for IRS Status
+        var ctx = document.getElementById('irsChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Belum', 'Sudah'],
+                datasets: [{
+                    label: 'Status IRS Mahasiswa',
+                    data: [5, 35],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     });
 </script>
-
 
 @endauth
 @endsection
