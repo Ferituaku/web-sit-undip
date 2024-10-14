@@ -73,18 +73,6 @@
                         Konsultasi Mahasiswa
                     </a>
                 </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link d-flex align-items-center">
-                        <i class="bi bi-journal-text me-2"></i>
-                        Manajemen Nilai
-                    </a>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link d-flex align-items-center">
-                        <i class="bi bi-book me-2"></i>
-                        Materi Kuliah
-                    </a>
-                </li>
             </ul>
             <!-- Logout -->
             <div class="mt-auto">
@@ -221,14 +209,13 @@
             });
         });
 
-        // Chart for IRS Status
         var ctx = document.getElementById('irsChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['Belum', 'Sudah'],
                 datasets: [{
-                    label: 'Status IRS Mahasiswa',
+                    label: 'Status Verifikasi IRS Mahasiswa',
                     data: [5, 35],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
