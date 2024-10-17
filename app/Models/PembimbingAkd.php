@@ -9,11 +9,6 @@ class PembimbingAkd extends Model
 {
     use HasFactory;
 
-    protected $table = 'pembimbing_akd';
-    protected $primaryKey = 'nip';
-    public $incrementing = false;
-    protected $keyType = 'int';
-
     protected $fillable = [
         'nip',
         'name',

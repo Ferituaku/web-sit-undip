@@ -39,17 +39,14 @@
                         <h1 class="mb-4">Selamat Datang!</h1>
                         <p class="mb-4">Anda ingin Masuk Sebagai:</p>
                         <div class="d-grid gap-3">
-                            @if(Auth::user()->role == 'dekan')
                             <a href="{{ route('dosen.dashboard') }}" class="btn btn-outline-light btn-lg btn-custom">
                                 <i class="fas fa-chalkboard-teacher me-2"></i>Menu Dosen Wali
                             </a>
+                            @if(Auth::user()->role == 'dekan')
                             <a href="{{ route('dekan.dashboard') }}" class="btn btn-outline-light btn-lg btn-custom">
                                 <i class="fas fa-user-tie me-2"></i>Menu Dekan
                             </a>
                             @elseif(Auth::user()->role == 'kaprodi')
-                            <a href="{{ route('dosen.dashboard') }}" class="btn btn-outline-light btn-lg btn-custom">
-                                <i class="fas fa-chalkboard-teacher me-2"></i>Menu Dosen
-                            </a>
                             <a href="{{ route('kaprodi.dashboard') }}" class="btn btn-outline-light btn-lg btn-custom">
                                 <i class="fas fa-user-graduate me-2"></i>Menu Kaprodi
                             </a>

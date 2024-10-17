@@ -50,8 +50,8 @@ Route::group(['middleware' => 'auth'], function () {
     // Rute untuk kaprodi
     Route::group(['middleware' => 'role:kaprodi,dosen'], function () {
         Route::get('/kaprodi/dashboard', [KaprodiController::class, 'kaprodi'])->name('kaprodi.dashboard');
-        Route::get('/kaprodi/buatjadwal', [KaprodiController::class, 'kaprodi'])->name('kaprodi.buatjadwal');
-        Route::get('/dosen/dashboard', [DosenController::class, 'dosen'])->name('dosen.dashboard');
+        // Route::get('/kaprodi/buatjadwal', [KaprodiController::class, 'kaprodi'])->name('kaprodi.buatjadwal');
+        Route::get('/dosen/dashboard', [KaprodiController::class, 'dosen'])->name('dosen.dashboard');
     });
 
     // Rute untuk dekan

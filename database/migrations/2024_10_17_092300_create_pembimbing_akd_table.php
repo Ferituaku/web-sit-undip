@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->unsignedBigInteger('nim')->primary();
+        Schema::create('pembimbing_akd', function (Blueprint $table) {
+            $table->unsignedBigInteger('nip')->primary();
             $table->string('name');
             $table->string('email')->unique();
-
-            $table->unsignedBigInteger('nip');
-
-            $table->foreign('nip')->references('nip')->on('pembimbing_akd');
         });
     }
 
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::dropIfExists('pembimbing_akd');
     }
 };

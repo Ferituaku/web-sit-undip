@@ -51,9 +51,9 @@ class AuthManager extends Controller
                     return redirect()->intended('/dosen/dashboard');
                 case 'akademik':
                     return redirect()->intended('/akademik/dashboard');
-                case 'dekan':
-                    return redirect()->intended('/pilihmenu');
                 case 'kaprodi':
+                    return redirect()->intended('/pilihmenu');
+                case 'dekan':
                     return redirect()->intended('/pilihmenu');
                 default:
                     return redirect('/login')->with('error', 'Role tidak dikenali');

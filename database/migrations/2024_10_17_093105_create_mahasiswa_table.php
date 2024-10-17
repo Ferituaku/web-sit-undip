@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembimbing_akd', function (Blueprint $table) {
-            $table->unsignedBigInteger('nip')->primary();
+        Schema::create('mahasiswa', function (Blueprint $table) {
+            $table->unsignedBigInteger('nim')->primary();
             $table->string('name');
             $table->string('email')->unique();
-            $table->foreignIdFor(User::class, 'created_by')->nullable();
+            $table->bigInteger('nip')->unsigned();
+        });
+
+        Schema::table('mahasiswa', function (Blueprint $table) {
+            $table->foreign('nip')->references('nip')->on('pembimbing_akd')->onDelete('cascade');
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pembimbing_akd');
+        Schema::dropIfExists('mahasiswa');
     }
 };
